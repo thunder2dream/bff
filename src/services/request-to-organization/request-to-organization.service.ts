@@ -17,7 +17,6 @@ export class RequestToOrganizationService {
   }
 
   public get$(req: Request, url: string): Observable<any> {
-    console.log('bbbbbbbb');
     const path = `${this.organizationServiceBaseUrl}${url}`;
     const config: AxiosRequestConfig = {
       params: req.query,
