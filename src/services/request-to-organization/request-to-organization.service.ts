@@ -21,18 +21,8 @@ export class RequestToOrganizationService {
     const config: AxiosRequestConfig = {
       params: req.query,
     };
-    const testData = [
-      {
-        customerId: 1,
-        customerName: 'customer1',
-      },
-      {
-        customerId: 2,
-        customerName: 'customer2',
-      },
-    ];
-    return of(testData);
     return this.http.get(path, config).pipe(
+      map((res) => res.data),
       catchError((e) => {
         return throwError(e);
       }),
